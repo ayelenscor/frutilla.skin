@@ -78,72 +78,87 @@ h4 {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    width: 250px;
-    max-height: 300px;
+    width: 300px; /* Aumentar el ancho */
+    max-height: 400px; /* Aumentar la altura máxima */
     overflow-y: auto;
     z-index: 9999;
-  }
-  
-  .carrito-container:hover .carrito-dropdown {
+    opacity: 0; /* Hacerlo invisible por defecto */
+    transition: opacity 0.3s ease; /* Transición suave */
+}
+
+/* Mostrar el menú al pasar el ratón */
+.carrito-container:hover .carrito-dropdown {
     display: block;
-  }
-  
-  #carrito-lista {
+    opacity: 1; /* Hacerlo visible con transición */
+}
+
+/* Estilo para los productos dentro del carrito */
+#carrito-lista {
     list-style-type: none;
     padding: 0;
     margin: 0;
-  }
-  
-  #carrito-lista li {
+}
+
+#carrito-lista li {
     display: flex;
+    flex-direction: column; /* Alineación en columna para mejor distribución */
     justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
+    align-items: flex-start;
+    margin-bottom: 20px; /* Más espacio entre los productos */
     border-bottom: 1px solid #ddd;
-    padding-bottom: 10px;
-  }
-  
-  #carrito-lista li p {
-    margin: 0;
-  }
-  
-  #carrito-lista li div {
+    padding-bottom: 15px;
+}
+
+#carrito-lista li p {
+    margin: 5px 0; /* Añadir un poco de margen para separar los elementos */
+    font-size: 18px; /* Aumentar el tamaño de la fuente */
+}
+
+#carrito-lista li div {
     display: flex;
-    gap: 5px;
-  }
-  
-  #carrito-lista li .btn {
+    gap: 15px; /* Espacio mayor entre los botones */
+}
+
+#carrito-lista li .btn {
     background-color: #ff6b9d;
     color: white;
     border: none;
-    padding: 5px 10px;
+    padding: 10px 20px; /* Aumentar el tamaño de los botones */
     border-radius: 5px;
     cursor: pointer;
-  }
-  
-  #carrito-lista li .btn:hover {
+    font-size: 16px; /* Aumentar el tamaño de la fuente en los botones */
+    transition: background-color 0.3s ease;
+}
+
+/* Cambio de color de los botones al pasar el ratón */
+#carrito-lista li .btn:hover {
     background-color: #e05583;
-  }
-  
-  .total {
+}
+
+/* Estilo para el total */
+.total {
     text-align: right;
-    margin-top: 10px;
-  }
-  
-  #vaciar-carrito {
+    margin-top: 15px; /* Separar el total de los productos */
+    font-size: 18px; /* Aumentar el tamaño de la fuente */
+}
+
+/* Estilo para el botón Vaciar Carrito */
+#vaciar-carrito {
     background-color: #ff6b9d;
     color: white;
     border: none;
-    padding: 10px;
+    padding: 15px; /* Aumentar el tamaño del botón */
     width: 100%;
     border-radius: 5px;
     margin-top: 10px;
-  }
-  
-  #vaciar-carrito:hover {
+    cursor: pointer;
+    font-size: 18px; /* Aumentar el tamaño de la fuente */
+}
+
+#vaciar-carrito:hover {
     background-color: #e05583;
-  }
-  
+}
+
   
 .banner-animado {
     background-color: #C13584 !important;
@@ -340,8 +355,8 @@ h4 {
   }
 
   .btn-agregar {
-    background-color: #ff6b9d;
-    color: white;
+    background-color: #ff6b9d !important;
+    color: white !important;
     border: none;
     padding: 10px 20px;
     font-size: 1rem;
@@ -351,7 +366,7 @@ h4 {
 }
 
 .btn-agregar:hover {
-    background-color: #e05583;
+    background-color: #e05583 !important;
 }
 
   
