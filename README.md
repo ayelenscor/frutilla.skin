@@ -1,4 +1,4 @@
-# 🍓 Frutilla.Skin
+# 🍓 Skin
 
 Bienvenid@s a **Frutilla.Skin**, una tienda online pensada para el cuidado personal con una estética dulce, femenina y moderna.  
 
