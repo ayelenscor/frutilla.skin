@@ -31,7 +31,7 @@ Este sitio fue desarrollado como parte de la entrega del curso de Desarrollo Web
 - **HTML5**
 - **CSS3** + estilos personalizados
 - **Bootstrap 5.3**
-- **JavaScript (vanilla)**
+- **JavaScript**
 - **Font Awesome** (íconos)
 - **Google Fonts**
 
