@@ -1,0 +1,20 @@
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos temporales y backups
+*.log
+*.tmp
+*.bak
+*.swp
+
+# Configuración de editores (VS Code, Sublime, etc.)
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Archivos de entorno (por si usás APIs)
+.env
+.env.local
+.env.*.local

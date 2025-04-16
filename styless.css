@@ -1,0 +1,357 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  h1 {
+    font-size: 2rem;
+    word-wrap: break-word;
+  }
+  
+  @media (max-width: 576px) {
+    .titulo-sitio {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+  }
+
+h2 {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+h3 {
+    padding-top: 30px;
+    text-align: center;
+    color: #a02b6a !important;
+}
+
+h4 {
+    padding-top: 25px;
+}
+
+/* Buscador */
+.search-container {
+    max-width: 100%;
+  }
+  
+  .search-container input {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .btn-buscar {
+    background-color: #ff6b9d !important;
+    color: white !important;
+    border: none;
+  }
+  
+  .btn-buscar:hover {
+    background-color: #e05583;
+  }
+  
+  
+/* Estilo básico del carrito */
+.carrito-container {
+    position: relative; /* Asegura que el dropdown se posicione en relación a este contenedor */
+  }
+  
+  .carrito-link {
+    font-weight: bold;
+    text-decoration: none;
+    color: #C13584;
+    font-size: 1rem;
+  }
+  
+  .carrito-link:hover {
+    color: #C13584;
+  }
+  
+ /* Menú desplegable */
+.carrito-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #ffb6c1;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 9999;
+  }
+  
+  .carrito-container:hover .carrito-dropdown {
+    display: block;
+  }
+  
+  #carrito-lista {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #carrito-lista li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+  }
+  
+  #carrito-lista li p {
+    margin: 0;
+  }
+  
+  #carrito-lista li div {
+    display: flex;
+    gap: 5px;
+  }
+  
+  #carrito-lista li .btn {
+    background-color: #ff6b9d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #carrito-lista li .btn:hover {
+    background-color: #e05583;
+  }
+  
+  .total {
+    text-align: right;
+    margin-top: 10px;
+  }
+  
+  #vaciar-carrito {
+    background-color: #ff6b9d;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  
+  #vaciar-carrito:hover {
+    background-color: #e05583;
+  }
+  
+  
+.banner-animado {
+    background-color: #C13584 !important;
+    color: white;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 14px
+  }
+  
+.texto-banner {
+    display: inline-block;
+    padding-left: 100%;
+    animation: moverTexto 12s linear infinite;
+  }
+  
+@keyframes moverTexto {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+.texto-banner:hover {
+    animation-play-state: paused;
+  }
+  
+.navbar {
+    background-color: #ffb6c1;
+    text-align: center !important;
+  }
+  
+  .navbar-nav {
+    gap: 20px; /* separa los enlaces */
+  }
+  
+  .nav-link {
+    font-weight: bold;
+    color: white !important;
+  }
+
+  .navbar-nav .nav-link:hover {
+    color: #ffe3e9;
+  }
+
+  .carousel-item img {
+    height: 300px;
+    object-fit:cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .carousel-item img:hover {
+    transform: scale(1.02);
+  }
+
+  @media (max-width: 768px) {
+    .carousel-inner img {
+      height: 200px;
+    }
+  }
+
+  .content-section {
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  section i {
+    transition: transform 0.3s ease;
+  }
+  
+  section i:hover {
+    transform: scale(1.2);
+  }
+
+  .medios-pago i {
+  transition: transform 0.3s ease;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.medios-pago i:hover {
+  transform: scale(1.15);
+}
+
+.btn-primary {
+    background-color: #C13584 !important;
+    border-color: #C13584 !important;
+}
+
+  
+  footer {
+    background-color: #ffb6c1 !important;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+
+  footer a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .instagram-icon i {
+    font-size: 20px; /* Tamaño del ícono */
+    color: white;
+    background-color: #E1306C;
+    padding: 8px;
+    border-radius: 50%;
+    margin: 0 5px;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+  }
+  
+  .instagram-icon i:hover {
+    transform: scale(1.2);
+    background-color: #C13584;
+  }
+
+ /* Estilo para el botón flotante de WhatsApp */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: white;
+    font-size: 28px;
+    padding: 12px;
+    border-radius: 50%;
+    width: 60px; /* Aseguramos un tamaño fijo */
+    height: 60px; /* Mismo tamaño para hacer el botón circular */
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease; /* Transición suave */
+    text-decoration: none;
+}
+
+.whatsapp-float:hover {
+    background-color: #1ebe5d;
+    transform: scale(1.1); /* Efecto de aumento al pasar el mouse */
+}
+
+/* Ajustes en pantallas más pequeñas */
+@media (max-width: 768px) {
+    .whatsapp-float {
+        bottom: 10px; /* Reducir la distancia en pantallas pequeñas */
+        right: 10px;
+        font-size: 24px; /* Ajustar el tamaño del ícono */
+        padding: 10px; /* Ajustar el tamaño del padding */
+    }
+}
+
+
+  @media (max-width: 576px) {
+    h1 {
+      font-size: 1.5rem;
+      padding: 15px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .banner-animado {
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .content-section form .form-control {
+      margin-bottom: 15px;
+    }
+  }
+  
+  .navbar-toggler {
+    border-color: white;
+  }
+  
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' ...");
+    filter: invert(100%);
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .btn-agregar {
+    background-color: #ff6b9d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-agregar:hover {
+    background-color: #e05583;
+}
+
+  
