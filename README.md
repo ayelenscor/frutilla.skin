@@ -1,7 +1,6 @@
 # 🍓 Frutilla.Skin
 
-Bienvenida a **Frutilla.Skin**, una tienda online pensada para el cuidado personal con una estética dulce, femenina y moderna.  
-Este sitio fue desarrollado como parte de la entrega del curso de Desarrollo Web en **Coderhouse**.
+Bienvenid@s a **Frutilla.Skin**, una tienda online pensada para el cuidado personal con una estética dulce, femenina y moderna.  
 
 ---
 
