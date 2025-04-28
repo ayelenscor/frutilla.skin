@@ -15,7 +15,7 @@
       text-align: center;
     }
   }
-  
+
 h2 {
     text-align: center;
     padding-bottom: 20px;
@@ -218,21 +218,13 @@ h4 {
   }
   
   .carousel-item img:hover {
-    transform: scale(1.3);
+    transform: scale(1.02);
   }
 
   @media (max-width: 768px) {
     .carousel-inner img {
       height: 200px;
     }
-  }
-
-  img.img-fluid {
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-  }
-  
-  img.img-fluid:hover {
-    transform: scale(1.3);
   }
 
   .content-section {
@@ -376,6 +368,3 @@ h4 {
 .btn-agregar:hover {
     background-color: #e05583 !important;
 }
-
-
-  
