@@ -119,6 +119,119 @@
           <p>$14.600</p>
           <button class="btn btn-agregar">Agregar al carrito</button>
         </div>
-      </div>
+        <div class="col-md-4 text-center">
+            <img src="Img/emulcorp.webp" class="img-fluid mb-2 rounded" alt="Emulsion Corporal">
+            <h5>Emulsion Corporal</h5>
+            <p>$10.700</p>
+            <button class="btn btn-agregar">Agregar al carrito</button>
+          </div>
+          <div class="col-md-4 text-center">
+            <img src="Img/espexf.webp" class="img-fluid mb-2 rounded" alt="Esponja Exfoliante">
+            <h5>Esponja Exfoliante</h5>
+            <p>$3.800</p>
+            <button class="btn btn-agregar">Agregar al carrito</button>
+          </div>
+          <div class="col-md-4 text-center">
+            <img src="Img/guaexf.webp" class="img-fluid mb-2 rounded" alt="Guante Exfoliante">
+            <h5>Guante Exfoliante</h5>
+            <p>$3.200</p>
+            <button class="btn btn-agregar">Agregar al carrito</button>
+          </div>
+     </div>
     </div>
   </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-4" style="background-color: #fce4ec;">
+    <p class="mb-0">
+      Seguinos en 
+      <a href="https://www.instagram.com/frutilla.skin" target="_blank" class="instagram-icon mx-1">
+        <i class="fab fa-instagram"></i>
+      </a>  
+      para más tips y productos 💕 
+    </p>
+  </footer>
+
+  <!-- WhatsApp flotante -->
+  <a href="https://wa.me/1234567890" class="whatsapp-float" target="_blank" title="Contactanos por WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Cambiar título si el usuario se va -->
+  <script>
+    const originalTitle = document.title;
+    document.addEventListener('visibilitychange', function () {
+      document.title = document.hidden ? '¡Volvé! Te extrañamos' : originalTitle;
+    });
+  </script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Activar autoplay en carrusel -->
+  <script>
+    const carousel = document.querySelector('#carouselProductos');
+    new bootstrap.Carousel(carousel, {
+      interval: 3000,
+      ride: 'carousel'
+    });
+  </script>
+
+<script>
+   // Simulación de productos en el carrito
+let carrito = [
+    { id: 1, nombre: "Shampoo Anti-caida", precio: 7.600, cantidad: 1 },
+    { id: 2, nombre: "Crema hidratante Pies", precio: 5.800, cantidad: 1 }
+];
+
+// Función para actualizar el contenido del carrito en el menú desplegable
+function actualizarCarrito() {
+    const listaCarrito = document.getElementById('carrito-lista');
+    const totalElement = document.getElementById('total');
+    listaCarrito.innerHTML = ''; // Limpiar lista
+
+    let total = 0;
+    carrito.forEach(producto => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+            <p><strong>${producto.nombre}</strong></p>
+            <p>$${producto.precio.toFixed(3)}</p>
+            <div>
+                <button class="btn btn-agregar" onclick="agregarProducto(${producto.id})">+ Agregar</button>
+                <button class="btn btn-eliminar" onclick="eliminarProducto(${producto.id})">Eliminar</button>
+            </div>
+        `;
+        listaCarrito.appendChild(li);
+        total += producto.precio * producto.cantidad;
+    });
+
+    totalElement.innerText = `Total: $${total.toFixed(2)}`;
+}
+
+// Función para agregar productos
+function agregarProducto(id) {
+    const producto = carrito.find(p => p.id === id);
+    if (producto) {
+        producto.cantidad += 1;
+        actualizarCarrito();
+    }
+}
+
+// Función para eliminar productos
+function eliminarProducto(id) {
+    carrito = carrito.filter(p => p.id !== id);
+    actualizarCarrito();
+}
+
+// Inicializar el carrito
+document.addEventListener('DOMContentLoaded', () => {
+    actualizarCarrito();
+});
+
+// Vaciar carrito
+document.getElementById('vaciar-carrito').addEventListener('click', () => {
+    carrito = [];
+    actualizarCarrito();
+});
+
+    </script>
