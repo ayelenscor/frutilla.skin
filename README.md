@@ -29,6 +29,8 @@ Bienvenid@s a **Frutilla.Skin**, una tienda online pensada para el cuidado perso
 
 - **HTML5**
 - **CSS3** + estilos personalizados
+- Sass
+- Animate.css
 - **Bootstrap 5.3**
 - **JavaScript**
 - **Font Awesome** (íconos)
