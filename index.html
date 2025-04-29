@@ -70,7 +70,7 @@
           </li>
         </ul>
         <div class="total">
-          <p>Total: $13.400</p>
+          <p id="total"> $13.400 </p>
           <button id="vaciar-carrito">Vaciar Carrito</button>
         </div>
       </div>
@@ -80,7 +80,7 @@
 
   <!-- Banner -->
   <div class="banner-animado text-center py-2" style="background-color: #fce4ec;">
-    <div class="texto-banner">- ENVIOS A TODO EL PAÍS 🍓 3 CUOTAS SIN INTERÉS -</div>
+    <div class="msg-banner"> - ENVIOS A TODO EL PAÍS 🍓 3 CUOTAS SIN INTERÉS - </div>
   </div>
 
   <!-- NAVBAR -->
@@ -270,7 +270,7 @@ function actualizarCarrito() {
         total += producto.precio * producto.cantidad;
     });
 
-    totalElement.innerText = `Total: $${total.toFixed(2)}`;
+    totalElement.innerText = `Total: $${total.toFixed(auto)}`;
 }
 
 // Función para agregar productos
