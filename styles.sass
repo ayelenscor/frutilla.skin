@@ -1,82 +1,181 @@
-* 
+// VARIABLES
+$color-principal: #ff6b9d
+$color-secundario: #C13584
+$color-hover: #e05583
+$color-footer: #ffb6c1
+$color-icon-bg: #E1306C
+$color-whatsapp: #25d366
+$transition: 0.3s ease
+$font-bold: bold
+$border-radius: 5px
+
+// RESET
+*
   margin: 0
   padding: 0
   box-sizing: border-box
 
-h1 
-  font-size: 2rem
+html
+  scroll-behavior: smooth
+
+// TITULOS
+h1, h2, h3, h4
   word-wrap: break-word
-
-@media (max-width: 576px)
-  .titulo-sitio 
-    font-size: 1.5rem
-    text-align: center
-
-h2 
   text-align: center
+
+h1
+  font-size: 2rem
+
+h2
   padding-bottom: 20px
 
-h3 
+h3
   padding-top: 30px
-  text-align: center
-  color: #a02b6a !important
+  color: $color-secundario
 
-h4 
+h4
   padding-top: 25px
 
-.search-container 
+// MEDIA QUERIES
+@media (max-width: 768px)
+  .carousel-inner img
+    height: 200px
+
+  .banner-animado
+    font-size: 13px
+    margin-bottom: 10px
+
+  .content-section form .form-control
+    margin-bottom: 15px
+
+  .whatsapp-float
+    bottom: 10px
+    right: 10px
+    font-size: 24px
+    padding: 10px
+
+@media (max-width: 576px)
+  h1, .titulo-sitio
+    font-size: 1.5rem
+    text-align: center
+    padding: 15px
+
+// NAVBAR
+.navbar
+  background-color: $color-footer
+  text-align: center
+
+.navbar-nav
+  gap: 20px
+
+.nav-link
+  font-weight: $font-bold
+  color: white
+
+  &:hover
+    color: #ffe3e9
+
+.navbar-toggler
+  border-color: white
+
+.navbar-toggler-icon
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' ...")
+  filter: invert(100%)
+
+// CAROUSEL
+.carousel-item img
+  height: 300px
+  object-fit: cover
+  border-radius: 10px
+  transition: transform $transition
+
+  &:hover
+    transform: scale(1.02)
+
+// BANNER
+.banner-animado
+  background-color: $color-secundario
+  color: white
+  overflow: hidden
+  white-space: nowrap
+  position: relative
+  height: 40px
+  display: flex
+  align-items: center
+  font-weight: $font-bold
+  font-size: 14px
+
+  a
+    text-decoration: none
+    color: inherit
+
+.msg-banner
+  display: inline-block
+  padding-left: 100%
+  animation: moverTexto 12s linear infinite
+
+  &:hover
+    animation-play-state: paused
+
+@keyframes moverTexto
+  0%
+    transform: translateX(0%)
+  100%
+    transform: translateX(-100%)
+
+// SEARCH
+.search-container
   max-width: 100%
 
-  input 
+  input
     flex: 1
     min-width: 0
 
-  .btn-buscar 
-    background-color: #ff6b9d !important
-    color: white !important
-    border: none
+  .btn-buscar
+    @extend .btn-agregar
 
-  .btn-buscar:hover 
-    background-color: #e05583
+    &:hover
+      background-color: $color-hover
 
-.carrito-container 
+// CARRITO
+.carrito-container
   position: relative
 
-  .carrito-link 
-    font-weight: bold
+  .carrito-link
+    font-weight: $font-bold
     text-decoration: none
-    color: #C13584
+    color: $color-secundario
     font-size: 1rem
 
-    &:hover 
-      color: #C13584
+    &:hover
+      color: $color-secundario
 
-  .carrito-dropdown 
+  .carrito-dropdown
     display: none
     position: absolute
     top: 100%
     right: 0
-    background-color: #ffb6c1
+    background-color: $color-footer
     padding: 20px
-    border-radius: 5px
+    border-radius: $border-radius
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1)
     width: 300px
     max-height: 400px
     overflow-y: auto
     z-index: 9999
     opacity: 0
-    transition: opacity 0.3s ease
+    transition: opacity $transition
 
-  &:hover .carrito-dropdown 
+  &:hover .carrito-dropdown
     display: block
     opacity: 1
 
-#carrito-lista 
-  list-style-type: none
+#carrito-lista
+  list-style: none
   padding: 0
   margin: 0
 
-  li 
+  li
     display: flex
     flex-direction: column
     justify-content: space-between
@@ -85,173 +184,103 @@ h4
     border-bottom: 1px solid #ddd
     padding-bottom: 15px
 
-    p 
+    p
       margin: 5px 0
       font-size: 18px
 
-    div 
+    div
       display: flex
       gap: 15px
-      text-decoration: none
 
-    .btn 
-      background-color: #ff6b9d
-      color: white
-      border: none
-      padding: 10px 20px
-      border-radius: 5px
-      cursor: pointer
-      font-size: 16px
-      transition: background-color 0.3s ease
+    .btn
+      @extend .btn-agregar
 
-      &:hover 
-        background-color: #e05583
-
-.total 
+.total
   text-align: right
   margin-top: 15px
   font-size: 18px
 
-#vaciar-carrito 
-  background-color: #ff6b9d
+#vaciar-carrito
+  @extend .btn-agregar
+  width: 100%
+  padding: 15px
+  margin-top: 10px
+
+// BOTONES COMUNES
+.btn-agregar, .btn-primary
+  background-color: $color-principal
   color: white
   border: none
-  padding: 15px
-  width: 100%
-  border-radius: 5px
-  margin-top: 10px
-  cursor: pointer
-  font-size: 18px
+  padding: 10px 20px
+  font-size: 1rem
+  font-weight: $font-bold
+  border-radius: $border-radius
+  transition: background-color $transition
 
-  &:hover 
-    background-color: #e05583
+  &:hover
+    background-color: $color-hover
 
-.banner-animado 
-  background-color: #C13584 !important
-  color: white
-  overflow: hidden
-  white-space: nowrap
-  position: relative
-  height: 40px
-  display: flex
-  align-items: center
-  font-weight: bold
-  font-size: 14px
-  text-decoration: none 
-  
-.banner-animado
-  a
-    text-decoration: none
-    color: inherit
+.btn-primary
+  border-color: $color-principal
 
-
-.msg-banner 
-  display: inline-block
-  padding-left: 100%
-  animation: moverTexto 12s linear infinite
-  text-decoration: none
-
-  &:hover 
-    animation-play-state: paused
-
-@keyframes moverTexto 
-  0% 
-    transform: translateX(0%)
-  100% 
-    transform: translateX(-100%)
-
-.navbar 
-  background-color: #ffb6c1
-  text-align: center !important
-
-.navbar-nav 
-  gap: 20px
-
-.nav-link 
-  font-weight: bold
-  color: white !important
-
-  &:hover 
-    color: #ffe3e9
-
-.carousel-item img 
-  height: 300px
-  object-fit: cover
-  border-radius: 10px
-  transition: transform 0.3s ease
-
-  &:hover 
-    transform: scale(1.02)
-
-@media (max-width: 768px)
-  .carousel-inner img 
-    height: 200px
-
-$transition-duration: 0.3s
-$scale-factor: 1.1
-$shadow-color: rgba(0, 0, 0, 0.2)
-
+// IMAGEN FLUIDA
 .img-fluid
-  transition: transform $transition-duration ease, box-shadow $transition-duration ease
+  transition: transform $transition, box-shadow $transition
 
-  &:hover 
-    transform: scale($scale-factor)
-    box-shadow: 0 0 15px $shadow-color
-  
+  &:hover
+    transform: scale(1.1)
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2)
 
-
-.content-section 
+// ICONOS Y SECCIONES
+.content-section
   padding: 40px 20px
   text-align: center
 
-section i 
-  transition: transform 0.3s ease
+section i,
+.medios-pago i
+  transition: transform $transition
 
-  &:hover 
-    transform: scale(1.2)
+section i:hover
+  transform: scale(1.2)
 
-.medios-pago i 
-  transition: transform 0.3s ease
-  padding-top: 10px
-  padding-bottom: 10px
+.medios-pago i
+  padding: 10px 0
 
-  &:hover 
+  &:hover
     transform: scale(1.15)
 
-.btn-primary 
-  background-color: #C13584 !important
-  border-color: #C13584 !important
-
-footer 
-  background-color: #ffb6c1 !important
+// FOOTER
+footer
+  background-color: $color-footer
   color: white
   padding: 20px
   text-align: center
 
-footer a 
-  color: white
-  font-weight: bold
-  text-decoration: none
+  a
+    color: white
+    font-weight: $font-bold
+    text-decoration: none
 
-.instagram-icon i 
+.instagram-icon i
   font-size: 20px
   color: white
-  background-color: #E1306C
+  background-color: $color-icon-bg
   padding: 8px
   border-radius: 50%
   margin: 0 5px
-  transition: transform 0.3s ease
+  transition: transform $transition
   text-decoration: none
 
-  &:hover 
+  &:hover
     transform: scale(1.2)
-    background-color: #C13584
+    background-color: $color-secundario
 
-.whatsapp-float 
+// WHATSAPP FLOTANTE
+.whatsapp-float
   position: fixed
   bottom: 20px
   right: 20px
-  background-color: #25d366
+  background-color: $color-whatsapp
   color: white
   font-size: 28px
   padding: 12px
@@ -263,50 +292,9 @@ footer a
   align-items: center
   justify-content: center
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3)
-  transition: all 0.3s ease
+  transition: all $transition
   text-decoration: none
 
-  &:hover 
+  &:hover
     background-color: #1ebe5d
     transform: scale(1.1)
-
-@media (max-width: 768px)
-  .whatsapp-float 
-    bottom: 10px
-    right: 10px
-    font-size: 24px
-    padding: 10px
-
-@media (max-width: 576px)
-  h1 
-    font-size: 1.5rem
-    padding: 15px
-
-@media (max-width: 768px)
-  .banner-animado 
-    font-size: 13px
-    margin-bottom: 10px
-
-@media (max-width: 768px)
-  .content-section form .form-control 
-    margin-bottom: 15px
-
-.navbar-toggler 
-  border-color: white
-
-.navbar-toggler-icon 
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' ...")
-  filter: invert(100%)
-
-html 
-  scroll-behavior: smooth
-
-.btn-agregar 
-  background-color: #ff6b9d !important
-  color: white !important
-  border: none
-  padding: 10px 20px
-  font-size: 1rem
-  font-weight: bold
-  border-radius: 5px
-  transition: background-color 0.3s ease
