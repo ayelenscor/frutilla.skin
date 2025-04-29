@@ -6,7 +6,6 @@ Bienvenid@s a **Frutilla.Skin**, una tienda online pensada para el cuidado perso
 
 ## 🛍️ ¿Qué vas a encontrar?
 
-- Diseño **one-page** con navegación suave entre secciones.
 - Tres secciones principales de productos:
   - **Skin Care**
   - **Cuidado Capilar**
@@ -41,8 +40,14 @@ Bienvenid@s a **Frutilla.Skin**, una tienda online pensada para el cuidado perso
 ## 🗂️ Estructura del proyecto
 
 📦 Frutilla.Skin 
-├── index.html # Página principal 
+├── index.html # Página inicio 
+├── skincare.html 
+├── cuidadocapilar.html
+├── cuidadocorporal.html
 ├── style.css # Estilos personalizados 
 ├── /img # Imágenes de productos, logo y staff 
 ├── README.md # Este archivo :) 
 │── .gitignore # Archivos ignorados por Git
+├── styles.css
+├── styles.css.map
+├── styles.sass
