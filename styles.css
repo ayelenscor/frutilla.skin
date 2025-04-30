@@ -4,6 +4,48 @@
   box-sizing: border-box;
 }
 
+/* Preloader */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffe6f0; /* rosa suave */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+/* Texto del logo */
+#preloader h1 {
+  font-size: 48px;
+  font-family: 'Arial', sans-serif;
+  color: #d63384; /* rosa más fuerte para contraste */
+}
+
+#preloader.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#preloader img {
+  width: 150px;
+}
+
+/* Contenido oculto inicialmente */
+#contenido {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+#contenido.visible {
+  opacity: 1;
+}
+
 h1 {
   font-size: 2rem;
   word-wrap: break-word;
