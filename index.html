@@ -29,6 +29,30 @@
 
 <body>
 
+  <!-- Preloader con logo de texto -->
+ <div id="preloader">
+  <h1>🍓Skin</h1>
+</div>
+
+  <script>
+    // Espera a que la página esté completamente cargada
+    window.addEventListener("load", function () {
+      const preloader = document.getElementById("preloader");
+      const contenido = document.getElementById("contenido");
+
+      // Espera 3 segundos antes de comenzar la transición
+      setTimeout(() => {
+        preloader.classList.add("fade-out");
+
+        // Después de la transición (1s), ocultamos el preloader y mostramos el contenido
+        setTimeout(() => {
+          preloader.style.display = "none";
+          contenido.classList.add("visible");
+        }, 1000); // 1s coincide con la duración del fade-out
+      }, 3000); // Espera inicial de 3 segundos
+    });
+  </script>
+
   <!-- Header -->
   <header class="header-top container-fluid py-3 px-3">
     <div class="row align-items-center gx-3 text-center text-md-start">
