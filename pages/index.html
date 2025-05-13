@@ -11,7 +11,7 @@
   </style>
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="css/styles.css" />
   
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -21,9 +21,40 @@
   
   <!-- Favicon 🍓 -->
   <link rel="icon" href="Img/fru.avif" type="image/png" />
+
+  <!-- librería Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
 </head>
 
 <body>
+
+  <!-- Preloader con logo de texto -->
+ <div id="preloader">
+  <h1>🍓Skin</h1>
+</div>
+<div id="contenido" class="invisible">
+  <!-- TODO el contenido de tu página va aquí -->
+</div>
+
+  <script>
+    // Espera a que la página esté completamente cargada
+    window.addEventListener("load", function () {
+      const preloader = document.getElementById("preloader");
+      const contenido = document.getElementById("contenido");
+
+      // Espera 3 segundos antes de comenzar la transición
+      setTimeout(() => {
+        preloader.classList.add("fade-out");
+
+        // Después de la transición (1s), ocultamos el preloader y mostramos el contenido
+        setTimeout(() => {
+          preloader.style.display = "none";
+          contenido.classList.add("visible");
+        }, 1000); // 1s coincide con la duración del fade-out
+      }, 3000); // Espera inicial de 3 segundos
+    });
+  </script>
 
   <!-- Header -->
   <header class="header-top container-fluid py-3 px-3">
@@ -31,7 +62,7 @@
       
       <!-- Logo -->
       <div class="col-12 col-md-3 mb-2 mb-md-0">
-        <h1 class="m-0">🍓Skin</h1>
+        <h1 class="m-0 animate__animated animate__shakeY">🍓Skin</h1>
       </div>
       <div class="col-12 col-md-5">
         <form class="d-flex w-100" role="search">
@@ -44,6 +75,7 @@
 <div class="carrito-container">
     <a href="#micarrito" class="carrito-link">
       <i class="fas fa-shopping-cart"></i> Mi Carrito
+    </a>
   
     <!-- Menú desplegable al pasar el ratón sobre el carrito -->
     <div class="carrito-dropdown">
@@ -66,7 +98,7 @@
           </li>
         </ul>
         <div class="total">
-          <p>Total: $13.400</p>
+          <p id="total"> $13.400 </p>
           <button id="vaciar-carrito">Vaciar Carrito</button>
         </div>
       </div>
@@ -76,7 +108,7 @@
 
   <!-- Banner -->
   <div class="banner-animado text-center py-2" style="background-color: #fce4ec;">
-    <div class="msg-banner">- ENVIOS A TODO EL PAÍS 🍓 3 CUOTAS SIN INTERÉS -</div>
+    <div class="msg-banner"> - ENVIOS A TODO EL PAÍS 🍓 3 CUOTAS SIN INTERÉS - </div>
   </div>
 
   <!-- NAVBAR -->
@@ -87,57 +119,117 @@
       </button>
       <div class="collapse navbar-collapse justify-content-center" id="navFrutilla">
         <ul class="navbar-nav text-center">
-            <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="skincare.html">Skin Care</a></li>
-          <li class="nav-item"><a class="nav-link" href="cuidadocapilar.html">Cuidado Capilar</a></li>
-          <li class="nav-item"><a class="nav-link" href="cuidadocorporal.html">Cuidado Corporal</a></li>
+          <li class="nav-item"><a class="nav-link" href="pages/index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="pages/skincare.html">Skin Care</a></li>
+          <li class="nav-item"><a class="nav-link" href="pages/cuidadocapilar.html">Cuidado Capilar</a></li>
+          <li class="nav-item"><a class="nav-link" href="pages/cuidadocorporal.html">Cuidado Corporal</a></li>
         </ul>
       </div>
     </div>
   </nav>
+  
+  <!-- Carrusel -->
+  <section class="container my-5">
+    <h2>Algunos de Nuestros productos! 😍</h2>
+    <div id="carouselProductos" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
 
-  <!-- CUIDADO CAPILAR -->
-  <section id="cuidadoCapilar" class="py-5" style="background-color: #f9c7da;">
-    <div class="container">
-      <h2 class="mb-4">💇‍♀️ Cuidado Capilar</h2>
-      <div class="row g-4">
-        <div class="col-md-4 text-center">
-          <img src="Img/balsamopelo.webp" class="img-fluid mb-2 rounded" alt="Balsamo Capilar">
-          <h5>Balsamo Capilar</h5>
-          <p>$8.200</p>
-          <button class="btn btn-agregar">Agregar al carrito</button>
-        </div>
-        <div class="col-md-4 text-center">
-          <img src="Img/mascarillanutpelo.webp" class="img-fluid mb-2 rounded" alt="Mascarilla nutritiva Capilar">
-          <h5>Mascarilla nutritiva Capilar</h5>
-          <p>$5.600</p>
-          <button class="btn btn-agregar">Agregar al carrito</button>
-        </div>
-        <div class="col-md-4 text-center">
-          <img src="Img/shampooanticaida.webp" class="img-fluid mb-2 rounded" alt="Shampoo Anti-caida">
-          <h5>Shampoo Anti-caida</h5>
-          <p>$7.600</p>
-          <button class="btn btn-agregar">Agregar al carrito</button>
-        </div>
-        <div class="col-md-4 text-center">
-            <img src="Img/tratintenscapilar.webp" class="img-fluid mb-2 rounded" alt="Tratamiento intensivo capilar">
-            <h5>Tratamiento intensivo Capilar</h5>
-            <p>$11.500</p>
-            <button class="btn btn-agregar">Agregar al carrito</button>
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <div class="row">
+            <div class="col-md-4 col-12">
+              <img src="Img/ampollafacial.webp" class="img-fluid w-100" alt="Producto 1" />
+            </div>
+            <div class="col-md-4 col-12">
+              <img src="Img/espumaparapies.webp" class="img-fluid w-100" alt="Producto 2" />
+            </div>
+            <div class="col-md-4 col-12">
+              <img src="Img/locionCeravecorporal.webp" class="img-fluid w-100" alt="Producto 3" />
+            </div>
           </div>
-        <div class="col-md-4 text-center">
-            <img src="Img/kitcolo.png" class="img-fluid mb-2 rounded" alt="Kit de Coloracion">
-            <h5>Kit de Coloracion</h5>
-            <p>$8.700</p>
-            <button class="btn btn-agregar">Agregar al carrito</button>
-          </div>
-        <div class="col-md-4 text-center">
-            <img src="Img/kitrut.webp" class="img-fluid mb-2 rounded" alt="Kit de Rutina">
-            <h5>Kit de Rutina</h5>
-            <p>$25.000</p>
-            <button class="btn btn-agregar">Agregar al carrito</button>
         </div>
 
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <div class="row">
+            <div class="col-md-4 col-12">
+              <img src="Img/mascarillanutpelo.webp" class="img-fluid w-100" alt="Producto 4" />
+            </div>
+            <div class="col-md-4 col-12">
+              <img src="Img/tratintenscapilar.webp" class="img-fluid w-100" alt="Producto 5" />
+            </div>
+            <div class="col-md-4 col-12">
+              <img src="Img/Prosolar.webp" class="img-fluid w-100" alt="Producto 6" />
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Controles -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselProductos" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselProductos" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <main class="content-section container" id="contacto">
+    <h3>Contacto</h3>
+    <form action="https://formspree.io/f/tu_codigo_aqui" method="POST" class="row g-3 justify-content-center">
+      <div class="col-12 col-md-6">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="nombre" name="nombre" required />
+      </div>
+      <div class="col-12 col-md-6">
+        <label for="email" class="form-label">Correo Electrónico</label>
+        <input type="email" class="form-control" id="email" name="_replyto" required />
+      </div>
+      <div class="col-12">
+        <label for="mensaje" class="form-label">Mensaje</label>
+        <textarea class="form-control" id="mensaje" name="mensaje" rows="4" required></textarea>
+      </div>
+      <div class="col-12 text-center">
+        <button type="submit" class="btn btn-pink" style="background-color: #ff6b9d; color: white;">Enviar</button>
+      </div>
+    </form>
+    <h4 class="text-center mt-4">¿Tenés preguntas? ¡Escribinos y te ayudamos!</h4>
+  </main>
+
+  <!-- Medios de Pago / Newsletter / Staff -->
+  <section class="container-fluid my-5 py-5" style="background-color: #F9E0EC;">
+    <div class="row g-4 justify-content-center">
+      <!-- Pago -->
+      <div class="col-12 col-md-4 text-center">
+        <h5>Medios de Pago</h5>
+        <div class="d-flex justify-content-center gap-4">
+          <i class="fab fa-cc-visa fa-3x text-primary"></i>
+          <i class="fab fa-cc-mastercard fa-3x text-danger"></i>
+          <i class="fab fa-cc-amex fa-3x text-info"></i>
+          <i class="fa-solid fa-building-columns fa-3x text-success"></i>
+        </div>
+      </div>
+
+      <!-- Newsletter -->
+      <div class="col-12 col-md-4 text-center">
+        <h5>Suscribite al Newsletter</h5>
+        <form class="text-center">
+          <input type="email" class="form-control mb-2" placeholder="Tu email" />
+          <button class="btn btn-primary w-100" type="submit">Suscribirme</button>
+        </form>
+      </div>
+
+      <!-- Staff -->
+      <div class="col-12 col-md-4 text-center">
+        <h5>Nuestro Staff</h5>
+        <img src="Img/Staff.jpg" alt="Staff Frutilla" class="img-fluid rounded shadow-sm mb-2" style="max-height: 200px; object-fit: cover;" />
+        <p class="small text-muted px-2">
+          Somos un equipo apasionado por el cuidado de la piel y el bienestar. 💆‍♀️
+          En Frutilla.Skin combinamos amor, ciencia y frescura para que cada producto sea una experiencia única.
+        </p>
       </div>
     </div>
   </section>
@@ -239,3 +331,7 @@ document.getElementById('vaciar-carrito').addEventListener('click', () => {
 });
 
     </script>
+    
+
+</body>
+</html>
