@@ -33,6 +33,9 @@
  <div id="preloader">
   <h1>🍓Skin</h1>
 </div>
+<div id="contenido" class="invisible">
+  <!-- TODO el contenido de tu página va aquí -->
+</div>
 
   <script>
     // Espera a que la página esté completamente cargada
@@ -72,6 +75,7 @@
 <div class="carrito-container">
     <a href="#micarrito" class="carrito-link">
       <i class="fas fa-shopping-cart"></i> Mi Carrito
+    </a>
   
     <!-- Menú desplegable al pasar el ratón sobre el carrito -->
     <div class="carrito-dropdown">
@@ -282,19 +286,22 @@ function actualizarCarrito() {
     let total = 0;
     carrito.forEach(producto => {
         const li = document.createElement('li');
+        const subtotal = producto.precio * producto.cantidad;
         li.innerHTML = `
             <p><strong>${producto.nombre}</strong></p>
-            <p>$${producto.precio.toFixed(3)}</p>
+            <p>Precio: $${producto.precio.toFixed(2)}</p>
+            <p>Cantidad: ${producto.cantidad}</p>
+            <p>Subtotal: $${subtotal.toFixed(2)}</p>
             <div>
                 <button class="btn btn-agregar" onclick="agregarProducto(${producto.id})">+ Agregar</button>
                 <button class="btn btn-eliminar" onclick="eliminarProducto(${producto.id})">Eliminar</button>
             </div>
         `;
         listaCarrito.appendChild(li);
-        total += producto.precio * producto.cantidad;
+        total += subtotal;
     });
 
-    totalElement.innerText = `Total: $${total.toFixed(auto)}`;
+    totalElement.innerText = `Total: $${total.toFixed(2)}`;
 }
 
 // Función para agregar productos
