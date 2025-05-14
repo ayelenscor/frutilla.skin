@@ -147,6 +147,28 @@ h4 {
   background-color: #e05583;
 }
 
+.frutilla-breadcrumb {
+  background-color: transparent;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1rem;
+}
+
+.frutilla-breadcrumb .breadcrumb-item a {
+  color: #ff6b9d;
+  text-decoration: none; /* sin subrayado */
+  transition: color 0.3s ease;
+}
+
+.frutilla-breadcrumb .breadcrumb-item a:hover {
+  color: #d94e83;
+}
+
+.frutilla-breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+  content: "›"; /* flecha en lugar de / */
+  color: #ff6b9d;
+  padding: 0 0.5rem;
+}
+
 .banner-animado {
   background-color: #C13584 !important;
   color: white;
