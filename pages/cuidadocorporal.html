@@ -11,7 +11,7 @@
   </style>
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="../estilos/styles.css" />
   
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -20,7 +20,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
   
   <!-- Favicon 🍓 -->
-  <link rel="icon" href="Img/fru.avif" type="image/png" />
+  <link rel="icon" href="../Img/fru.avif" type="image/png" />
 </head>
 
 <body>
@@ -40,36 +40,10 @@
         </form>
       </div>
       <div class="col-12 col-md-4 text-center text-md-end mt-2 mt-md-0">
-        <!-- Carrito de compras con el menú desplegable -->
+        <!-- Carrito de compras -->
 <div class="carrito-container">
     <a href="#micarrito" class="carrito-link">
-      <i class="fas fa-shopping-cart"></i> Mi Carrito
-  
-    <!-- Menú desplegable al pasar el ratón sobre el carrito -->
-    <div class="carrito-dropdown">
-        <ul id="carrito-lista">
-          <li>
-            <p>Shampoo Anti-caida</p>
-            <p>$7.600</p>
-            <div>
-              <button class="btn btn-agregar">+ Agregar</button>
-              <button class="btn btn-eliminar">Eliminar</button>
-            </div>
-          </li>
-          <li>
-            <p>Crema hidratante Pies</p>
-            <p>$5.800</p>
-            <div>
-              <button class="btn btn-agregar">+ Agregar</button>
-              <button class="btn btn-eliminar">Eliminar</button>
-            </div>
-          </li>
-        </ul>
-        <div class="total">
-          <p>Total: $13.400</p>
-          <button id="vaciar-carrito">Vaciar Carrito</button>
-        </div>
-      </div>
+      <i class="fas fa-shopping-cart"></i> Mi Carrito </a>
       
     </div>
   </header>
@@ -87,7 +61,7 @@
       </button>
       <div class="collapse navbar-collapse justify-content-center" id="navFrutilla">
         <ul class="navbar-nav text-center">
-            <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
           <li class="nav-item"><a class="nav-link" href="skincare.html">Skin Care</a></li>
           <li class="nav-item"><a class="nav-link" href="cuidadocapilar.html">Cuidado Capilar</a></li>
           <li class="nav-item"><a class="nav-link" href="cuidadocorporal.html">Cuidado Corporal</a></li>
@@ -102,37 +76,37 @@
       <h2 class="mb-4">🧼 Cuidado Corporal</h2>
       <div class="row g-4">
         <div class="col-md-4 text-center">
-          <img src="Img/cremaparapies.webp" class="img-fluid mb-2 rounded" alt="Crema hidratante Pies">
+          <img src="../Img/cremaparapies.webp" class="img-fluid mb-2 rounded" alt="Crema hidratante Pies">
           <h5>Crema hidratante Pies</h5>
           <p>$5.800</p>
           <button class="btn btn-agregar">Agregar al carrito</button>
         </div>
         <div class="col-md-4 text-center">
-          <img src="Img/gelexfoliantecorp.webp" class="img-fluid mb-2 rounded" alt="Gel Exfoliante Corporal">
+          <img src="../Img/gelexfoliantecorp.webp" class="img-fluid mb-2 rounded" alt="Gel Exfoliante Corporal">
           <h5>Gel Exfoliante Corporal</h5>
           <p>$9.000</p>
           <button class="btn btn-agregar">Agregar al carrito</button>
         </div>
         <div class="col-md-4 text-center">
-          <img src="Img/kitavenocorporal.webp" class="img-fluid mb-2 rounded" alt="Kit Aveno Corporal">
+          <img src="../Img/kitavenocorporal.webp" class="img-fluid mb-2 rounded" alt="Kit Aveno Corporal">
           <h5>Kit Aveno Corporal</h5>
           <p>$14.600</p>
           <button class="btn btn-agregar">Agregar al carrito</button>
         </div>
         <div class="col-md-4 text-center">
-            <img src="Img/emulcorp.webp" class="img-fluid mb-2 rounded" alt="Emulsion Corporal">
+            <img src="../Img/emulcorp.webp" class="img-fluid mb-2 rounded" alt="Emulsion Corporal">
             <h5>Emulsion Corporal</h5>
             <p>$10.700</p>
             <button class="btn btn-agregar">Agregar al carrito</button>
           </div>
           <div class="col-md-4 text-center">
-            <img src="Img/espexf.webp" class="img-fluid mb-2 rounded" alt="Esponja Exfoliante">
+            <img src="../Img/espexf.webp" class="img-fluid mb-2 rounded" alt="Esponja Exfoliante">
             <h5>Esponja Exfoliante</h5>
             <p>$3.800</p>
             <button class="btn btn-agregar">Agregar al carrito</button>
           </div>
           <div class="col-md-4 text-center">
-            <img src="Img/guaexf.webp" class="img-fluid mb-2 rounded" alt="Guante Exfoliante">
+            <img src="../Img/guaexf.webp" class="img-fluid mb-2 rounded" alt="Guante Exfoliante">
             <h5>Guante Exfoliante</h5>
             <p>$3.200</p>
             <button class="btn btn-agregar">Agregar al carrito</button>
@@ -176,65 +150,3 @@
       ride: 'carousel'
     });
   </script>
-
-<script>
-   // Simulación de productos en el carrito
-let carrito = [
-    { id: 1, nombre: "Shampoo Anti-caida", precio: 7.600, cantidad: 1 },
-    { id: 2, nombre: "Crema hidratante Pies", precio: 5.800, cantidad: 1 }
-];
-
-// Función para actualizar el contenido del carrito en el menú desplegable
-function actualizarCarrito() {
-    const listaCarrito = document.getElementById('carrito-lista');
-    const totalElement = document.getElementById('total');
-    listaCarrito.innerHTML = ''; // Limpiar lista
-
-    let total = 0;
-    carrito.forEach(producto => {
-        const li = document.createElement('li');
-        const subtotal = producto.precio * producto.cantidad;
-        li.innerHTML = `
-            <p><strong>${producto.nombre}</strong></p>
-            <p>Precio: $${producto.precio.toFixed(2)}</p>
-            <p>Cantidad: ${producto.cantidad}</p>
-            <p>Subtotal: $${subtotal.toFixed(2)}</p>
-            <div>
-                <button class="btn btn-agregar" onclick="agregarProducto(${producto.id})">+ Agregar</button>
-                <button class="btn btn-eliminar" onclick="eliminarProducto(${producto.id})">Eliminar</button>
-            </div>
-        `;
-        listaCarrito.appendChild(li);
-        total += subtotal;
-    });
-
-    totalElement.innerText = `Total: $${total.toFixed(2)}`;
-}
-
-// Función para agregar productos
-function agregarProducto(id) {
-    const producto = carrito.find(p => p.id === id);
-    if (producto) {
-        producto.cantidad += 1;
-        actualizarCarrito();
-    }
-}
-
-// Función para eliminar productos
-function eliminarProducto(id) {
-    carrito = carrito.filter(p => p.id !== id);
-    actualizarCarrito();
-}
-
-// Inicializar el carrito
-document.addEventListener('DOMContentLoaded', () => {
-    actualizarCarrito();
-});
-
-// Vaciar carrito
-document.getElementById('vaciar-carrito').addEventListener('click', () => {
-    carrito = [];
-    actualizarCarrito();
-});
-
-    </script>

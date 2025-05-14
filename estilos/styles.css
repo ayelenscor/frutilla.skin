@@ -133,30 +133,7 @@ h4 {
   opacity: 1;
 }
 
-#carrito-lista {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-#carrito-lista li {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 20px;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 15px;
-}
-#carrito-lista li p {
-  margin: 5px 0;
-  font-size: 18px;
-}
-#carrito-lista li div {
-  display: flex;
-  gap: 15px;
-  text-decoration: none;
-}
-#carrito-lista li .btn {
+.btn {
   background-color: #ff6b9d;
   color: white;
   border: none;
@@ -166,28 +143,7 @@ h4 {
   font-size: 16px;
   transition: background-color 0.3s ease;
 }
-#carrito-lista li .btn:hover {
-  background-color: #e05583;
-}
-
-.total {
-  text-align: right;
-  margin-top: 15px;
-  font-size: 18px;
-}
-
-#vaciar-carrito {
-  background-color: #ff6b9d;
-  color: white;
-  border: none;
-  padding: 15px;
-  width: 100%;
-  border-radius: 5px;
-  margin-top: 10px;
-  cursor: pointer;
-  font-size: 18px;
-}
-#vaciar-carrito:hover {
+.btn:hover {
   background-color: #e05583;
 }
 

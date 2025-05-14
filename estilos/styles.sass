@@ -184,62 +184,9 @@ h4
     &:hover
       color: $color-secundario
 
-  .carrito-dropdown
-    display: none
-    position: absolute
-    top: 100%
-    right: 0
-    background-color: $color-footer
-    padding: 20px
-    border-radius: $border-radius
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1)
-    width: 300px
-    max-height: 400px
-    overflow-y: auto
-    z-index: 9999
-    opacity: 0
-    transition: opacity $transition
-
-  &:hover .carrito-dropdown
-    display: block
-    opacity: 1
-
-#carrito-lista
-  list-style: none
-  padding: 0
-  margin: 0
-
-  li
-    display: flex
-    flex-direction: column
-    justify-content: space-between
-    align-items: flex-start
-    margin-bottom: 20px
-    border-bottom: 1px solid #ddd
-    padding-bottom: 15px
-
-    p
-      margin: 5px 0
-      font-size: 18px
-
-    div
-      display: flex
-      gap: 15px
-
     .btn
       @extend .btn-agregar
-
-.total
-  text-align: right
-  margin-top: 15px
-  font-size: 18px
-
-#vaciar-carrito
-  @extend .btn-agregar
-  width: 100%
-  padding: 15px
-  margin-top: 10px
-
+      
 // BOTONES COMUNES
 .btn-agregar, .btn-primary
   background-color: $color-principal
