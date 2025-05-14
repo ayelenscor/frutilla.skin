@@ -126,6 +126,26 @@ h4
   &:hover
     transform: scale(1.02)
 
+.frutilla-breadcrumb
+  background-color: transparent
+  font-family: 'Raleway', sans-serif
+  font-size: 1rem
+
+  .breadcrumb-item
+    a
+      color: #ff6b9d
+      text-decoration: none
+      transition: color 0.3s ease
+
+      &:hover
+        color: #d94e83
+
+    + .breadcrumb-item::before
+      content: "›"
+      color: #ff6b9d
+      padding: 0 0.5rem
+
+
 // BANNER
 .banner-animado
   background-color: $color-secundario
@@ -186,7 +206,7 @@ h4
 
     .btn
       @extend .btn-agregar
-      
+
 // BOTONES COMUNES
 .btn-agregar, .btn-primary
   background-color: $color-principal

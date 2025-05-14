@@ -155,7 +155,7 @@ h4 {
 
 .frutilla-breadcrumb .breadcrumb-item a {
   color: #ff6b9d;
-  text-decoration: none; /* sin subrayado */
+  text-decoration: none; 
   transition: color 0.3s ease;
 }
 
@@ -164,7 +164,7 @@ h4 {
 }
 
 .frutilla-breadcrumb .breadcrumb-item + .breadcrumb-item::before {
-  content: "›"; /* flecha en lugar de / */
+  content: "›"; 
   color: #ff6b9d;
   padding: 0 0.5rem;
 }
